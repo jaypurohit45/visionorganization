@@ -443,44 +443,44 @@ function TestimonialsSection() {
 
 function InstagramSection() {
   return (
-    <section id="instagram" className="px-5 py-20 sm:px-8 lg:px-12">
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-        <motion.div {...fadeUp}>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200 light:text-blue-700">Instagram</p>
-          <h2 className="font-display text-4xl font-bold leading-tight sm:text-6xl">Follow the official Vision Organisation account.</h2>
-          <p className="mt-6 text-lg leading-8 text-white/62 light:text-slate-700">
+    <section id="instagram" className="px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.82fr_1fr] lg:items-center">
+        <motion.div {...fadeUp} className="max-w-2xl">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200 light:text-blue-700">Instagram</p>
+          <h2 className="font-display text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Follow the official Vision Organisation account.</h2>
+          <p className="mt-5 text-base leading-7 text-white/62 light:text-slate-700 sm:text-lg sm:leading-8">
             Official profile preview, bio, and direct Instagram actions are wired to open in a new tab for a seamless brand connection.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 font-semibold text-slate-950">
+          <div className="mt-7 flex flex-col gap-3 min-[420px]:flex-row">
+            <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-white px-5 py-4 font-semibold text-slate-950">
               <Instagram className="mr-2 h-5 w-5" /> Follow
             </a>
-            <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-4 font-semibold">
+            <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-4 font-semibold">
               Visit Instagram <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </div>
         </motion.div>
-        <motion.div {...fadeUp} className="glass rounded-[8px] p-4">
-          <div className="flex items-center gap-4 border-b border-white/10 pb-4 light:border-slate-200">
-            <div className="h-32 w-24 overflow-hidden rounded-[8px] border border-cyan-200/30 bg-black">
+        <motion.div {...fadeUp} className="glass w-full max-w-3xl justify-self-center rounded-[8px] p-3 sm:p-4">
+          <div className="flex items-center gap-3 border-b border-white/10 pb-4 light:border-slate-200 sm:gap-4">
+            <div className="h-28 w-20 shrink-0 overflow-hidden rounded-[8px] border border-cyan-200/30 bg-black sm:h-32 sm:w-24">
               <Image src="/vision-instagram-profile.jpeg" alt="Vision Organisation Instagram profile preview" width={180} height={320} className="h-full w-full object-contain" />
             </div>
-            <div>
-              <p className="font-display text-2xl font-bold">visionorganisation_</p>
+            <div className="min-w-0">
+              <p className="truncate font-display text-xl font-bold sm:text-2xl">visionorganisation_</p>
               <p className="text-sm text-white/60 light:text-slate-600">Marketing Agency</p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-3 py-5 text-center">
+          <div className="grid grid-cols-3 gap-2 py-4 text-center sm:gap-3 sm:py-5">
             {["Posts", "Followers", "Following"].map((label, index) => (
-              <div key={label} className="rounded-[8px] bg-white/[.06] p-4 light:bg-slate-100">
-                <p className="font-display text-2xl font-bold">{index === 0 ? "0" : index + 1}</p>
-                <p className="text-xs text-white/55 light:text-slate-600">{label}</p>
+              <div key={label} className="rounded-[8px] bg-white/[.06] p-3 light:bg-slate-100 sm:p-4">
+                <p className="font-display text-xl font-bold sm:text-2xl">{index === 0 ? "0" : index + 1}</p>
+                <p className="mt-1 text-[11px] text-white/55 light:text-slate-600 sm:text-xs">{label}</p>
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
             {["Content", "Editing", "Branding", "Marketing", "Strategy", "Growth"].map((item) => (
-              <div key={item} className="aspect-square rounded-[8px] bg-[radial-gradient(circle_at_35%_35%,rgba(34,211,238,.45),transparent_45%),linear-gradient(135deg,rgba(37,87,255,.45),rgba(2,4,10,.88))] p-3 text-xs font-semibold">
+              <div key={item} className="aspect-[4/3] rounded-[8px] bg-[radial-gradient(circle_at_35%_35%,rgba(34,211,238,.45),transparent_45%),linear-gradient(135deg,rgba(37,87,255,.45),rgba(2,4,10,.88))] p-3 text-xs font-semibold sm:aspect-square">
                 {item}
               </div>
             ))}
