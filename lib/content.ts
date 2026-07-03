@@ -18,7 +18,7 @@ export const instagramUrl =
 
 export const primaryPhone = "+919429740745";
 export const whatsappPhone = "918238577319";
-export const primaryEmail = "parthjoshi7380@gmail.com";
+export const primaryEmail = "infovisionorganisation@gmail.com";
 
 export const navItems = [
   "Home",

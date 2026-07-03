@@ -164,27 +164,23 @@ export default function VisionPortfolio() {
 
           <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative mx-auto w-full max-w-[33rem]">
             <div className="absolute -inset-8 rounded-full bg-blue-500/20 blur-3xl" />
-            <div className="glass relative overflow-hidden rounded-[8px] p-4">
-              <div className="flex items-center gap-4">
-                <div className="h-20 w-20 overflow-hidden rounded-full border border-cyan-200/30 bg-black">
-                  <Image src="/vision-instagram-profile.jpeg" alt="Vision Organisation official Instagram profile logo" width={140} height={140} className="h-full w-full object-cover" priority />
+            <div className="glass relative overflow-hidden rounded-[8px] p-6 sm:p-8">
+              <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-cyan-300/20 blur-3xl" />
+              <div className="absolute -bottom-20 left-8 h-56 w-56 rounded-full bg-blue-600/25 blur-3xl" />
+              <div className="relative mx-auto flex max-w-sm flex-col items-center text-center">
+                <div className="relative grid h-44 w-44 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_80px_rgba(34,211,238,.28)] sm:h-56 sm:w-56">
+                  <div className="absolute inset-0 rounded-[8px] bg-[radial-gradient(circle_at_50%_15%,rgba(34,211,238,.25),transparent_55%)]" />
+                  <Image src="/logo.jpg" alt="Vision Organisation logo" width={220} height={220} className="relative h-full w-full object-contain drop-shadow-[0_0_28px_rgba(34,211,238,.45)]" priority />
                 </div>
-                <div>
-                  <p className="font-display text-2xl font-bold">visionorganisation_</p>
-                  <p className="text-sm text-white/60 light:text-slate-600">Digital Marketing Agency</p>
+                <p className="mt-7 text-xs font-semibold uppercase tracking-[0.34em] text-cyan-100/80">Vision Organisation</p>
+                <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">Premium digital growth for modern brands.</h2>
+                <div className="mt-6 grid w-full grid-cols-3 gap-3 text-center">
+                  {["Content", "Branding", "Marketing"].map((label) => (
+                    <div key={label} className="rounded-[8px] border border-white/10 bg-white/[.06] p-3">
+                      <p className="text-xs font-semibold text-white/65 light:text-slate-600">{label}</p>
+                    </div>
+                  ))}
                 </div>
-              </div>
-              <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-                {["Content", "Branding", "Marketing"].map((label) => (
-                  <div key={label} className="rounded-[8px] border border-white/10 bg-white/[.06] p-4">
-                    <p className="font-display text-2xl font-bold">0{label.length % 3}</p>
-                    <p className="mt-1 text-xs text-white/55 light:text-slate-600">{label}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 rounded-[8px] bg-slate-950/70 p-5 light:bg-white/75">
-                <p className="text-sm text-white/70 light:text-slate-700">Work With Vision Organisation</p>
-                <p className="mt-2 text-2xl font-semibold">Editing | Branding | Marketing</p>
               </div>
             </div>
           </motion.div>
@@ -439,8 +435,8 @@ function InstagramSection() {
         </motion.div>
         <motion.div {...fadeUp} className="glass rounded-[8px] p-4">
           <div className="flex items-center gap-4 border-b border-white/10 pb-4 light:border-slate-200">
-            <div className="h-16 w-16 overflow-hidden rounded-full border border-cyan-200/30 bg-black">
-              <Image src="/vision-instagram-profile.jpeg" alt="Vision Organisation official Instagram logo" width={96} height={96} className="h-full w-full object-cover" />
+            <div className="h-32 w-24 overflow-hidden rounded-[8px] border border-cyan-200/30 bg-black">
+              <Image src="/vision-instagram-profile.jpeg" alt="Vision Organisation Instagram profile preview" width={180} height={320} className="h-full w-full object-contain" />
             </div>
             <div>
               <p className="font-display text-2xl font-bold">visionorganisation_</p>
