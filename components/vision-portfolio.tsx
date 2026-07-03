@@ -328,11 +328,11 @@ function AboutSection() {
         </motion.div>
         <div className="grid gap-4">
           {timeline.map((item, index) => (
-            <motion.div key={item.title} {...fadeUp} transition={{ ...fadeUp.transition, delay: index * 0.08 }} className="glass rounded-[8px] p-6">
+            <motion.div key={item.title} {...fadeUp} transition={{ ...fadeUp.transition, delay: index * 0.08 }} className="glass rounded-[8px] p-6 light:bg-white/85">
               <div className="flex items-start gap-5">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-cyan-300/15 font-display text-lg font-bold text-cyan-100 light:text-blue-700">0{index + 1}</span>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-cyan-300/15 font-display text-lg font-bold text-cyan-100 light:bg-blue-50 light:text-blue-700">0{index + 1}</span>
                 <div>
-                  <h3 className="font-display text-2xl font-semibold">{item.title}</h3>
+                  <h3 className="font-display text-2xl font-semibold light:text-slate-950">{item.title}</h3>
                   <p className="mt-2 leading-7 text-white/60 light:text-slate-700">{item.copy}</p>
                 </div>
               </div>
