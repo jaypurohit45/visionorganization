@@ -164,22 +164,49 @@ export default function VisionPortfolio() {
 
           <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative mx-auto w-full max-w-[33rem]">
             <div className="absolute -inset-8 rounded-full bg-blue-500/20 blur-3xl" />
-            <div className="glass relative overflow-hidden rounded-[8px] p-6 sm:p-8">
+            <div className="glass relative overflow-hidden rounded-[8px] p-4 sm:p-5">
               <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-cyan-300/20 blur-3xl" />
               <div className="absolute -bottom-20 left-8 h-56 w-56 rounded-full bg-blue-600/25 blur-3xl" />
-              <div className="relative mx-auto flex max-w-sm flex-col items-center text-center">
-                <div className="relative grid h-44 w-44 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_80px_rgba(34,211,238,.28)] sm:h-56 sm:w-56">
-                  <div className="absolute inset-0 rounded-[8px] bg-[radial-gradient(circle_at_50%_15%,rgba(34,211,238,.25),transparent_55%)]" />
-                  <Image src="/logo.jpg" alt="Vision Organisation logo" width={220} height={220} className="relative h-full w-full object-contain drop-shadow-[0_0_28px_rgba(34,211,238,.45)]" priority />
+              <div className="relative grid gap-5 lg:grid-cols-[0.72fr_1fr] lg:items-stretch">
+                <div className="overflow-hidden rounded-[8px] border border-white/10 bg-black/60 p-2 shadow-[0_0_60px_rgba(34,211,238,.18)]">
+                  <Image src="/vision-instagram-profile.jpeg" alt="Vision Organisation Instagram profile preview" width={360} height={640} className="h-full max-h-[27rem] w-full rounded-[6px] object-contain" priority />
                 </div>
-                <p className="mt-7 text-xs font-semibold uppercase tracking-[0.34em] text-cyan-100/80">Vision Organisation</p>
-                <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">Premium digital growth for modern brands.</h2>
-                <div className="mt-6 grid w-full grid-cols-3 gap-3 text-center">
-                  {["Content", "Branding", "Marketing"].map((label) => (
-                    <div key={label} className="rounded-[8px] border border-white/10 bg-white/[.06] p-3">
-                      <p className="text-xs font-semibold text-white/65 light:text-slate-600">{label}</p>
+                <div className="flex flex-col justify-between gap-5">
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <div className="grid h-14 w-14 shrink-0 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-2 shadow-[0_0_34px_rgba(34,211,238,.22)]">
+                        <Image src="/logo.jpg" alt="Vision Organisation logo" width={72} height={72} className="h-full w-full object-contain" priority />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="truncate font-display text-2xl font-bold">visionorganisation_</p>
+                        <p className="text-sm text-white/62 light:text-slate-600">Profile access | Posts | Reels</p>
+                      </div>
                     </div>
-                  ))}
+                    <div className="mt-5 grid grid-cols-3 gap-2 text-center">
+                      {["Posts", "Reels", "Brand"].map((label, index) => (
+                        <div key={label} className="rounded-[8px] border border-white/10 bg-white/[.06] p-3">
+                          <p className="font-display text-xl font-bold">{index === 0 ? "00" : index === 1 ? "01" : "VO"}</p>
+                          <p className="mt-1 text-[11px] font-medium text-white/55 light:text-slate-600">{label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="rounded-[8px] border border-white/10 bg-slate-950/70 p-4 light:bg-white/75">
+                    <div className="mb-3 flex items-center justify-between gap-3 text-xs font-semibold text-white/55 light:text-slate-600">
+                      <span>Preview Content</span>
+                      <span className="text-cyan-100 light:text-blue-700">Live Profile</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {["Post", "Reel", "Story"].map((label) => (
+                        <div key={label} className="aspect-square rounded-[8px] bg-[radial-gradient(circle_at_35%_30%,rgba(34,211,238,.38),transparent_48%),linear-gradient(135deg,rgba(37,87,255,.38),rgba(2,4,10,.9))] p-2 text-[11px] font-semibold text-white/80">
+                          {label}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <a href={instagramUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center rounded-full bg-white px-5 py-4 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]">
+                    <Instagram className="mr-2 h-4 w-4" /> Open Instagram Profile <ExternalLink className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
+                  </a>
                 </div>
               </div>
             </div>
