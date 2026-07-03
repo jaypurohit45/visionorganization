@@ -24,7 +24,6 @@ export const navItems = [
   "Home",
   "Services",
   "Portfolio",
-  "Clients",
   "About",
   "Testimonials",
   "Instagram",
@@ -33,7 +32,7 @@ export const navItems = [
 
 export const stats = [
   { value: "150+", label: "Projects" },
-  { value: "80+", label: "Clients" },
+  { value: "80+", label: "Brands" },
   { value: "300M+", label: "Views generated" },
   { value: "12M+", label: "Engagements" },
   { value: "99%", label: "Client satisfaction" }
@@ -125,18 +124,6 @@ export const projects = [
   }
 ];
 
-export const clients = [
-  "CLIENT 01",
-  "CLIENT 02",
-  "CLIENT 03",
-  "CLIENT 04",
-  "CLIENT 05",
-  "CLIENT 06",
-  "CLIENT 07",
-  "CLIENT 08",
-  "CLIENT 09",
-  "CLIENT 10"
-];
 
 export const testimonials = [
   {

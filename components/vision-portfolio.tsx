@@ -20,7 +20,6 @@ import {
   X
 } from "lucide-react";
 import {
-  clients,
   faqs,
   instagramUrl,
   navItems,
@@ -196,7 +195,6 @@ export default function VisionPortfolio() {
       <StatsSection />
       <ServicesSection />
       <PortfolioSection query={query} setQuery={setQuery} projects={filteredProjects} setActiveProject={setActiveProject} />
-      <ClientsSection />
       <AboutSection />
       <TestimonialsSection />
       <InstagramSection />
@@ -300,6 +298,20 @@ function ServicesSection() {
             <service.icon className="mb-8 h-6 w-6 text-cyan-200 light:text-blue-700" />
             <h3 className="font-display text-xl font-semibold">{service.title}</h3>
             <p className="mt-3 max-h-14 overflow-hidden text-sm leading-6 text-white/58 transition-all duration-300 group-hover:max-h-40 light:text-slate-600">{service.copy}</p>
+            {service.title === "Advertising" && (
+              <div className="mt-5 grid gap-2">
+                {[
+                  { name: "Meta Ads", mark: "Meta" },
+                  { name: "JioHotstar Ads", mark: "JioHotstar" },
+                  { name: "Google Ads", mark: "Google" }
+                ].map((platform) => (
+                  <div key={platform.name} className="flex items-center justify-between rounded-[8px] border border-white/10 bg-black/25 px-3 py-2 text-[11px] font-semibold text-white/78 light:bg-white/70 light:text-slate-700">
+                    <span className="font-display text-sm tracking-tight text-white light:text-slate-950">{platform.mark}</span>
+                    <span>{platform.name}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </motion.article>
         ))}
       </div>
@@ -344,24 +356,6 @@ function PortfolioSection({
             </div>
           </motion.button>
         ))}
-      </div>
-    </section>
-  );
-}
-
-function ClientsSection() {
-  const loop = [...clients, ...clients];
-  return (
-    <section id="clients" className="py-20">
-      <SectionHeading eyebrow="Clients" title="Built for brands that care how they are perceived." copy="A premium logo marquee and client system prepared for real case studies, success stories, and unlimited client additions." />
-      <div className="overflow-hidden border-y border-white/10 bg-white/[.04] py-6 light:border-slate-200 light:bg-white/60">
-        <div className="flex w-max animate-marquee gap-4">
-          {loop.map((client, index) => (
-            <div key={`${client}-${index}`} className="grid h-20 w-44 place-items-center rounded-[8px] border border-white/10 bg-black/25 font-display text-xl font-bold tracking-[0.18em] text-white/75 light:border-slate-200 light:bg-white light:text-slate-700">
-              {client}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
