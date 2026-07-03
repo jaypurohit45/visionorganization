@@ -1,0 +1,44 @@
+﻿# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+
+# production
+build/
+dist/
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local env files
+.env
+.env*.local
+!.env.example
+
+# vercel
+.vercel/
+
+# typescript
+*.tsbuildinfo
+
+# local server logs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# archives / source theme references
+*.zip
+
+# local reference screenshots
+WhatsApp Image*.jpeg

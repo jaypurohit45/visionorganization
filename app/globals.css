@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: #03060d;
+  --foreground: #f8fbff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% -10%, rgba(37, 87, 255, .22), transparent 30rem),
+    radial-gradient(circle at 80% 5%, rgba(34, 211, 238, .16), transparent 28rem),
+    linear-gradient(180deg, #02040a 0%, #07111f 46%, #03060d 100%);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+body.light {
+  color-scheme: light;
+  --background: #f6f9ff;
+  --foreground: #06101f;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(37, 87, 255, .14), transparent 24rem),
+    radial-gradient(circle at 86% 6%, rgba(34, 211, 238, .18), transparent 24rem),
+    linear-gradient(180deg, #ffffff 0%, #edf4ff 48%, #f8fbff 100%);
+  color: var(--foreground);
+}
+
+::selection {
+  background: rgba(34, 211, 238, .35);
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .05));
+  border: 1px solid rgba(255, 255, 255, .14);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(22px);
+}
+
+.light .glass {
+  background: rgba(255, 255, 255, .74);
+  border-color: rgba(15, 23, 42, .1);
+  box-shadow: 0 24px 80px rgba(14, 42, 100, .14);
+}
+
+.hero-mask {
+  mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+}
