@@ -56,7 +56,6 @@ export default function VisionPortfolio() {
   const [sent, setSent] = useState(false);
   const [query, setQuery] = useState("");
   const [progress, setProgress] = useState(0);
-  const [loaded, setLoaded] = useState(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -81,11 +80,7 @@ export default function VisionPortfolio() {
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    const timer = window.setTimeout(() => setLoaded(true), 800);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.clearTimeout(timer);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -100,19 +95,6 @@ export default function VisionPortfolio() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
-      <AnimatePresence>
-        {!loaded && (
-          <motion.div className="fixed inset-0 z-[200] grid place-items-center bg-[#02040a]" exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center">
-              <div className="mx-auto mb-5 h-16 w-16 overflow-hidden rounded-full border border-cyan-300/30 bg-black shadow-glow">
-                <Image src="/logo.jpg" alt="Vision Organisation logo" width={80} height={80} className="h-full w-full object-cover" priority />
-              </div>
-              <p className="font-display text-2xl font-semibold">Vision Organisation</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.45em] text-cyan-200/70">Digital Growth</p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <motion.div
         className="pointer-events-none fixed z-[120] hidden h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/35 mix-blend-screen md:block"
@@ -126,7 +108,7 @@ export default function VisionPortfolio() {
       <section id="home" className="hero-mask relative flex min-h-[100svh] items-center overflow-hidden px-5 pb-20 pt-28 sm:px-8 lg:px-12">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(20,156,255,.25),transparent_28rem)]" />
-          <div className="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[conic-gradient(from_120deg,rgba(34,211,238,.18),transparent,rgba(139,92,246,.18),transparent)] blur-sm animate-[spin_18s_linear_infinite]" />
+          <div className="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[conic-gradient(from_120deg,rgba(34,211,238,.16),transparent,rgba(139,92,246,.16),transparent)] blur-sm motion-safe:animate-[spin_28s_linear_infinite]" />
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[var(--background)] to-transparent" />
         </div>
 
