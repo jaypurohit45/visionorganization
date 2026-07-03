@@ -13,8 +13,6 @@ import {
   Video
 } from "lucide-react";
 
-export const instagramUrl =
-  "https://www.instagram.com/visionorganisation_?igsh=MThtOXVibmNpeDU0bA==";
 
 export const primaryPhone = "+919429740745";
 export const whatsappPhone = "918238577319";
@@ -178,7 +176,7 @@ export const faqs = [
   },
   {
     q: "How do we start?",
-    a: "Use the Call Us, WhatsApp Us, Email Us, or Instagram buttons. Private phone numbers and email addresses stay hidden in the visible UI."
+    a: "Use the Call Us, WhatsApp Us, or Email Us buttons. Private phone numbers and email addresses stay hidden in the visible UI."
   }
 ];
 
