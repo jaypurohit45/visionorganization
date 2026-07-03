@@ -301,13 +301,12 @@ function ServicesSection() {
             {service.title === "Advertising" && (
               <div className="mt-5 grid gap-2">
                 {[
-                  { name: "Meta Ads", mark: "Meta" },
-                  { name: "JioHotstar Ads", mark: "JioHotstar" },
-                  { name: "Google Ads", mark: "Google" }
+                  { name: "Meta Ads", logo: "/meta-ads.svg" },
+                  { name: "JioHotstar Ads", logo: "/jiohotstar-ads.svg" },
+                  { name: "Google Ads", logo: "/google-ads.svg" }
                 ].map((platform) => (
-                  <div key={platform.name} className="flex items-center justify-between rounded-[8px] border border-white/10 bg-black/25 px-3 py-2 text-[11px] font-semibold text-white/78 light:bg-white/70 light:text-slate-700">
-                    <span className="font-display text-sm tracking-tight text-white light:text-slate-950">{platform.mark}</span>
-                    <span>{platform.name}</span>
+                  <div key={platform.name} className="rounded-[8px] border border-white/10 bg-white p-2 shadow-sm transition group-hover:border-cyan-200/30">
+                    <Image src={platform.logo} alt={`${platform.name} logo`} width={260} height={72} className="h-10 w-full object-contain" />
                   </div>
                 ))}
               </div>
