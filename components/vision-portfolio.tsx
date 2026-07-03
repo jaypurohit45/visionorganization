@@ -167,47 +167,26 @@ export default function VisionPortfolio() {
             <div className="glass relative overflow-hidden rounded-[8px] p-4 sm:p-5">
               <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-cyan-300/20 blur-3xl" />
               <div className="absolute -bottom-20 left-8 h-56 w-56 rounded-full bg-blue-600/25 blur-3xl" />
-              <div className="relative grid gap-5 lg:grid-cols-[0.72fr_1fr] lg:items-stretch">
-                <div className="overflow-hidden rounded-[8px] border border-white/10 bg-black/60 p-2 shadow-[0_0_60px_rgba(34,211,238,.18)]">
-                  <Image src="/vision-instagram-profile.jpeg" alt="Vision Organisation Instagram profile preview" width={360} height={640} className="h-full max-h-[27rem] w-full rounded-[6px] object-contain" priority />
+              <div className="relative flex flex-col items-center gap-6 text-center">
+                <a href={instagramUrl} target="_blank" rel="noreferrer" className="group relative grid h-52 w-52 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_80px_rgba(34,211,238,.28)] transition hover:scale-[1.02] sm:h-64 sm:w-64" aria-label="Open Vision Organisation Instagram profile">
+                  <div className="absolute inset-0 rounded-[8px] bg-[radial-gradient(circle_at_50%_15%,rgba(34,211,238,.25),transparent_55%)]" />
+                  <Image src="/logo.jpg" alt="Vision Organisation logo" width={260} height={260} className="relative h-full w-full object-contain drop-shadow-[0_0_28px_rgba(34,211,238,.45)]" priority />
+                </a>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.34em] text-cyan-100/80">Instagram Profile</p>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">visionorganisation_</h2>
+                  <p className="mt-3 text-sm leading-6 text-white/62 light:text-slate-600">Tap the logo to open the official Vision Organisation Instagram profile.</p>
                 </div>
-                <div className="flex flex-col justify-between gap-5">
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div className="grid h-14 w-14 shrink-0 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-2 shadow-[0_0_34px_rgba(34,211,238,.22)]">
-                        <Image src="/logo.jpg" alt="Vision Organisation logo" width={72} height={72} className="h-full w-full object-contain" priority />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="truncate font-display text-2xl font-bold">visionorganisation_</p>
-                        <p className="text-sm text-white/62 light:text-slate-600">Profile access | Posts | Reels</p>
-                      </div>
+                <div className="grid w-full grid-cols-3 gap-2 text-center">
+                  {["Content", "Reels", "Branding"].map((label) => (
+                    <div key={label} className="rounded-[8px] border border-white/10 bg-white/[.06] p-3">
+                      <p className="text-xs font-semibold text-white/65 light:text-slate-600">{label}</p>
                     </div>
-                    <div className="mt-5 grid grid-cols-3 gap-2 text-center">
-                      {["Posts", "Reels", "Brand"].map((label, index) => (
-                        <div key={label} className="rounded-[8px] border border-white/10 bg-white/[.06] p-3">
-                          <p className="font-display text-xl font-bold">{index === 0 ? "00" : index === 1 ? "01" : "VO"}</p>
-                          <p className="mt-1 text-[11px] font-medium text-white/55 light:text-slate-600">{label}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="rounded-[8px] border border-white/10 bg-slate-950/70 p-4 light:bg-white/75">
-                    <div className="mb-3 flex items-center justify-between gap-3 text-xs font-semibold text-white/55 light:text-slate-600">
-                      <span>Preview Content</span>
-                      <span className="text-cyan-100 light:text-blue-700">Live Profile</span>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2">
-                      {["Post", "Reel", "Story"].map((label) => (
-                        <div key={label} className="aspect-square rounded-[8px] bg-[radial-gradient(circle_at_35%_30%,rgba(34,211,238,.38),transparent_48%),linear-gradient(135deg,rgba(37,87,255,.38),rgba(2,4,10,.9))] p-2 text-[11px] font-semibold text-white/80">
-                          {label}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <a href={instagramUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center rounded-full bg-white px-5 py-4 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]">
-                    <Instagram className="mr-2 h-4 w-4" /> Open Instagram Profile <ExternalLink className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
-                  </a>
+                  ))}
                 </div>
+                <a href={instagramUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center rounded-full bg-white px-5 py-4 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]">
+                  <Instagram className="mr-2 h-4 w-4" /> Open Instagram Profile <ExternalLink className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
+                </a>
               </div>
             </div>
           </motion.div>
@@ -460,31 +439,25 @@ function InstagramSection() {
             </a>
           </div>
         </motion.div>
-        <motion.div {...fadeUp} className="glass w-full max-w-3xl justify-self-center rounded-[8px] p-3 sm:p-4">
-          <div className="flex items-center gap-3 border-b border-white/10 pb-4 light:border-slate-200 sm:gap-4">
-            <div className="h-28 w-20 shrink-0 overflow-hidden rounded-[8px] border border-cyan-200/30 bg-black sm:h-32 sm:w-24">
-              <Image src="/vision-instagram-profile.jpeg" alt="Vision Organisation Instagram profile preview" width={180} height={320} className="h-full w-full object-contain" />
-            </div>
-            <div className="min-w-0">
-              <p className="truncate font-display text-xl font-bold sm:text-2xl">visionorganisation_</p>
-              <p className="text-sm text-white/60 light:text-slate-600">Marketing Agency</p>
-            </div>
+        <motion.div {...fadeUp} className="glass w-full max-w-2xl justify-self-center rounded-[8px] p-5 sm:p-6">
+          <div className="flex flex-col items-center text-center">
+            <a href={instagramUrl} target="_blank" rel="noreferrer" className="relative grid h-44 w-44 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_64px_rgba(34,211,238,.24)] transition hover:scale-[1.02] sm:h-56 sm:w-56" aria-label="Open Vision Organisation Instagram profile">
+              <div className="absolute inset-0 rounded-[8px] bg-[radial-gradient(circle_at_50%_15%,rgba(34,211,238,.25),transparent_55%)]" />
+              <Image src="/logo.jpg" alt="Vision Organisation logo" width={220} height={220} className="relative h-full w-full object-contain drop-shadow-[0_0_24px_rgba(34,211,238,.4)]" />
+            </a>
+            <p className="mt-6 truncate font-display text-2xl font-bold sm:text-3xl">visionorganisation_</p>
+            <p className="mt-2 text-sm text-white/60 light:text-slate-600">Marketing Agency</p>
           </div>
-          <div className="grid grid-cols-3 gap-2 py-4 text-center sm:gap-3 sm:py-5">
-            {["Posts", "Followers", "Following"].map((label, index) => (
-              <div key={label} className="rounded-[8px] bg-white/[.06] p-3 light:bg-slate-100 sm:p-4">
-                <p className="font-display text-xl font-bold sm:text-2xl">{index === 0 ? "0" : index + 1}</p>
-                <p className="mt-1 text-[11px] text-white/55 light:text-slate-600 sm:text-xs">{label}</p>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+          <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
             {["Content", "Editing", "Branding", "Marketing", "Strategy", "Growth"].map((item) => (
-              <div key={item} className="aspect-[4/3] rounded-[8px] bg-[radial-gradient(circle_at_35%_35%,rgba(34,211,238,.45),transparent_45%),linear-gradient(135deg,rgba(37,87,255,.45),rgba(2,4,10,.88))] p-3 text-xs font-semibold sm:aspect-square">
+              <div key={item} className="rounded-[8px] bg-[radial-gradient(circle_at_35%_35%,rgba(34,211,238,.34),transparent_45%),linear-gradient(135deg,rgba(37,87,255,.34),rgba(2,4,10,.9))] p-4 text-center text-xs font-semibold">
                 {item}
               </div>
             ))}
           </div>
+          <a href={instagramUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-4 font-semibold text-slate-950 transition hover:scale-[1.01]">
+            <Instagram className="mr-2 h-5 w-5" /> Open Instagram Profile
+          </a>
         </motion.div>
       </div>
     </section>

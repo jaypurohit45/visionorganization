@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     siteName: "Vision Organisation",
     images: [
       {
-        url: "/vision-instagram-profile.jpeg",
+        url: "/logo.jpg",
         width: 1080,
         height: 1920,
-        alt: "Vision Organisation Instagram profile"
+        alt: "Vision Organisation logo"
       }
     ],
     locale: "en_IN",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Vision Organisation | Premium Digital Marketing Agency",
     description:
       "Creative marketing solutions that generate real growth for modern brands.",
-    images: ["/vision-instagram-profile.jpeg"]
+    images: ["/logo.jpg"]
   },
   alternates: {
     canonical: "/"
