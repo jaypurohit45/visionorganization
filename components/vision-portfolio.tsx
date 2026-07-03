@@ -143,31 +143,18 @@ export default function VisionPortfolio() {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative mx-auto w-full max-w-[33rem]">
+          <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative mx-auto hidden w-full max-w-[30rem] lg:block">
             <div className="absolute -inset-8 rounded-full bg-blue-500/20 blur-3xl" />
-            <div className="glass relative overflow-hidden rounded-[8px] p-4 sm:p-5">
+            <div className="glass relative overflow-hidden rounded-[8px] p-8">
               <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-cyan-300/20 blur-3xl" />
               <div className="absolute -bottom-20 left-8 h-56 w-56 rounded-full bg-blue-600/25 blur-3xl" />
-              <div className="relative flex flex-col items-center gap-6 text-center">
-                <a href={instagramUrl} target="_blank" rel="noreferrer" className="group relative grid h-52 w-52 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_80px_rgba(34,211,238,.28)] transition hover:scale-[1.02] sm:h-64 sm:w-64" aria-label="Open Vision Organisation Instagram profile">
+              <div className="relative flex flex-col items-center text-center">
+                <div className="relative grid h-56 w-56 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_80px_rgba(34,211,238,.28)]">
                   <div className="absolute inset-0 rounded-[8px] bg-[radial-gradient(circle_at_50%_15%,rgba(34,211,238,.25),transparent_55%)]" />
-                  <Image src="/logo.jpg" alt="Vision Organisation logo" width={260} height={260} className="relative h-full w-full object-contain drop-shadow-[0_0_28px_rgba(34,211,238,.45)]" priority />
-                </a>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.34em] text-cyan-100/80">Instagram Profile</p>
-                  <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">visionorganisation_</h2>
-                  <p className="mt-3 text-sm leading-6 text-white/62 light:text-slate-600">Tap the logo to open the official Vision Organisation Instagram profile.</p>
+                  <Image src="/logo.jpg" alt="Vision Organisation logo" width={240} height={240} className="relative h-full w-full object-contain drop-shadow-[0_0_28px_rgba(34,211,238,.45)]" priority />
                 </div>
-                <div className="grid w-full grid-cols-3 gap-2 text-center">
-                  {["Content", "Reels", "Branding"].map((label) => (
-                    <div key={label} className="rounded-[8px] border border-white/10 bg-white/[.06] p-3">
-                      <p className="text-xs font-semibold text-white/65 light:text-slate-600">{label}</p>
-                    </div>
-                  ))}
-                </div>
-                <a href={instagramUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center rounded-full bg-white px-5 py-4 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]">
-                  <Instagram className="mr-2 h-4 w-4" /> Open Instagram Profile <ExternalLink className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
-                </a>
+                <p className="mt-7 text-xs font-semibold uppercase tracking-[0.34em] text-cyan-100/80">Vision Organisation</p>
+                <h2 className="mt-3 font-display text-3xl font-bold leading-tight">Premium digital growth for modern brands.</h2>
               </div>
             </div>
           </motion.div>
@@ -179,7 +166,6 @@ export default function VisionPortfolio() {
       <PortfolioSection query={query} setQuery={setQuery} projects={filteredProjects} setActiveProject={setActiveProject} />
       <AboutSection />
       <TestimonialsSection />
-      <InstagramSection />
       <FaqSection activeFaq={activeFaq} setActiveFaq={setActiveFaq} />
       <ContactSection />
       <Footer />
@@ -280,19 +266,6 @@ function ServicesSection() {
             <service.icon className="mb-8 h-6 w-6 text-cyan-200 light:text-blue-700" />
             <h3 className="font-display text-xl font-semibold">{service.title}</h3>
             <p className="mt-3 max-h-14 overflow-hidden text-sm leading-6 text-white/58 transition-all duration-300 group-hover:max-h-40 light:text-slate-600">{service.copy}</p>
-            {service.title === "Advertising" && (
-              <div className="mt-5 grid gap-2">
-                {[
-                  { name: "Meta Ads", logo: "/meta-ads.svg" },
-                  { name: "JioHotstar Ads", logo: "/jiohotstar-ads.svg" },
-                  { name: "Google Ads", logo: "/google-ads.svg" }
-                ].map((platform) => (
-                  <div key={platform.name} className="rounded-[8px] border border-white/10 bg-white p-2 shadow-sm transition group-hover:border-cyan-200/30">
-                    <Image src={platform.logo} alt={`${platform.name} logo`} width={260} height={72} className="h-10 w-full object-contain" />
-                  </div>
-                ))}
-              </div>
-            )}
           </motion.article>
         ))}
       </div>
@@ -395,50 +368,6 @@ function TestimonialsSection() {
   );
 }
 
-function InstagramSection() {
-  return (
-    <section id="instagram" className="px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.82fr_1fr] lg:items-center">
-        <motion.div {...fadeUp} className="max-w-2xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200 light:text-blue-700">Instagram</p>
-          <h2 className="font-display text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Follow the official Vision Organisation account.</h2>
-          <p className="mt-5 text-base leading-7 text-white/62 light:text-slate-700 sm:text-lg sm:leading-8">
-            Official profile preview, bio, and direct Instagram actions are wired to open in a new tab for a seamless brand connection.
-          </p>
-          <div className="mt-7 flex flex-col gap-3 min-[420px]:flex-row">
-            <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-white px-5 py-4 font-semibold text-slate-950">
-              <Instagram className="mr-2 h-5 w-5" /> Follow
-            </a>
-            <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-4 font-semibold">
-              Visit Instagram <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </div>
-        </motion.div>
-        <motion.div {...fadeUp} className="glass w-full max-w-2xl justify-self-center rounded-[8px] p-5 sm:p-6">
-          <div className="flex flex-col items-center text-center">
-            <a href={instagramUrl} target="_blank" rel="noreferrer" className="relative grid h-44 w-44 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_64px_rgba(34,211,238,.24)] transition hover:scale-[1.02] sm:h-56 sm:w-56" aria-label="Open Vision Organisation Instagram profile">
-              <div className="absolute inset-0 rounded-[8px] bg-[radial-gradient(circle_at_50%_15%,rgba(34,211,238,.25),transparent_55%)]" />
-              <Image src="/logo.jpg" alt="Vision Organisation logo" width={220} height={220} className="relative h-full w-full object-contain drop-shadow-[0_0_24px_rgba(34,211,238,.4)]" />
-            </a>
-            <p className="mt-6 truncate font-display text-2xl font-bold sm:text-3xl">visionorganisation_</p>
-            <p className="mt-2 text-sm text-white/60 light:text-slate-600">Marketing Agency</p>
-          </div>
-          <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
-            {["Content", "Editing", "Branding", "Marketing", "Strategy", "Growth"].map((item) => (
-              <div key={item} className="rounded-[8px] bg-[radial-gradient(circle_at_35%_35%,rgba(34,211,238,.34),transparent_45%),linear-gradient(135deg,rgba(37,87,255,.34),rgba(2,4,10,.9))] p-4 text-center text-xs font-semibold">
-                {item}
-              </div>
-            ))}
-          </div>
-          <a href={instagramUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-4 font-semibold text-slate-950 transition hover:scale-[1.01]">
-            <Instagram className="mr-2 h-5 w-5" /> Open Instagram Profile
-          </a>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 function FaqSection({ activeFaq, setActiveFaq }: { activeFaq: number; setActiveFaq: (value: number) => void }) {
   return (
     <section className="px-5 py-20 sm:px-8 lg:px-12">
@@ -511,7 +440,7 @@ function Footer() {
           </div>
         </div>
         <div className="flex flex-wrap gap-3 text-sm text-white/58 light:text-slate-600">
-          {["Services", "Portfolio", "Instagram", "Contact"].map((item) => (
+          {["Services", "Portfolio", "Contact"].map((item) => (
             <a key={item} href={`#${slug(item)}`} className="hover:text-cyan-100 light:hover:text-blue-700">{item}</a>
           ))}
         </div>

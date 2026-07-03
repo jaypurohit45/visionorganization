@@ -26,7 +26,6 @@ export const navItems = [
   "Portfolio",
   "About",
   "Testimonials",
-  "Instagram",
   "Contact"
 ];
 
