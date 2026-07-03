@@ -7,6 +7,7 @@ import {
   ArrowUp,
   ChevronRight,
   ExternalLink,
+  Instagram,
   Mail,
   MapPin,
   Menu,
@@ -33,6 +34,10 @@ import {
 } from "@/lib/content";
 
 type Project = (typeof projects)[number];
+
+const instagramUrl =
+  "https://www.instagram.com/visionorganisation_?igsh=MThtOXVibmNpeDU0bA==";
+
 
 const fadeUp = {
   initial: { opacity: 0, y: 34 },
@@ -110,7 +115,7 @@ export default function VisionPortfolio() {
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[var(--background)] to-transparent" />
         </div>
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 lg:items-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-xs font-medium text-cyan-100 backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_20px_rgba(34,211,238,.9)]" />
@@ -135,22 +140,6 @@ export default function VisionPortfolio() {
                   <p className="text-sm font-medium">{item.label}</p>
                 </div>
               ))}
-            </div>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative mx-auto hidden w-full max-w-[30rem] lg:block">
-            <div className="absolute -inset-8 rounded-full bg-blue-500/20 blur-3xl" />
-            <div className="glass relative overflow-hidden rounded-[8px] p-8">
-              <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-cyan-300/20 blur-3xl" />
-              <div className="absolute -bottom-20 left-8 h-56 w-56 rounded-full bg-blue-600/25 blur-3xl" />
-              <div className="relative flex flex-col items-center text-center">
-                <div className="relative grid h-56 w-56 place-items-center rounded-[8px] border border-cyan-200/30 bg-black/80 p-5 shadow-[0_0_80px_rgba(34,211,238,.28)]">
-                  <div className="absolute inset-0 rounded-[8px] bg-[radial-gradient(circle_at_50%_15%,rgba(34,211,238,.25),transparent_55%)]" />
-                  <Image src="/logo.jpg" alt="Vision Organisation logo" width={240} height={240} className="relative h-full w-full object-contain drop-shadow-[0_0_28px_rgba(34,211,238,.45)]" priority />
-                </div>
-                <p className="mt-7 text-xs font-semibold uppercase tracking-[0.34em] text-cyan-100/80">Vision Organisation</p>
-                <h2 className="mt-3 font-display text-3xl font-bold leading-tight">Premium digital growth for modern brands.</h2>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -443,10 +432,13 @@ function Footer() {
             <p className="text-sm text-white/50 light:text-slate-600">Digital Marketing Agency</p>
           </div>
         </div>
-        <div className="flex flex-wrap gap-3 text-sm text-white/58 light:text-slate-600">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-white/58 light:text-slate-600">
           {["Services", "Portfolio", "Contact"].map((item) => (
             <a key={item} href={`#${slug(item)}`} className="hover:text-cyan-100 light:hover:text-blue-700">{item}</a>
           ))}
+          <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-cyan-100 light:hover:text-blue-700" aria-label="Follow Vision Organisation on Instagram">
+            <Instagram className="h-4 w-4" /> Follow us on Instagram
+          </a>
         </div>
         <p className="text-sm text-white/45 light:text-slate-500">Copyright 2026 Vision Organisation. All rights reserved.</p>
       </div>
