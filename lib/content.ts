@@ -28,10 +28,10 @@ export const navItems = [
 ];
 
 export const stats = [
-  { value: "150+", label: "Projects" },
-  { value: "80+", label: "Brands" },
-  { value: "300M+", label: "Views generated" },
-  { value: "12M+", label: "Engagements" },
+  { value: "100+", label: "Projects" },
+  { value: "30+", label: "Brands" },
+  { value: "40M+", label: "Views generated" },
+  { value: "2M+", label: "Engagements" },
   { value: "99%", label: "Client satisfaction" }
 ];
 
