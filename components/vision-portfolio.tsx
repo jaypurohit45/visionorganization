@@ -279,7 +279,7 @@ function PortfolioSection({
 }) {
   return (
     <section id="portfolio" className="px-5 py-20 sm:px-8 lg:px-12">
-      <SectionHeading eyebrow="Portfolio" title="Case studies built around visibility, trust, and measurable growth." copy="Explore premium campaign concepts inspired by the results Vision Organisation is built to create for ambitious brands." />
+      <SectionHeading eyebrow="Portfolio" title="Case studies built around visibility, trust, and measurable growth." copy="A closer look at campaigns shaped around stronger visibility, cleaner positioning, and enquiries that are easier to convert." />
       <div className="mx-auto mb-6 flex max-w-7xl items-center gap-3 rounded-full border border-white/10 bg-white/[.06] px-4 py-3 light:border-slate-200 light:bg-white/75">
         <Search className="h-5 w-5 text-cyan-200 light:text-blue-700" />
         <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects, industries, metrics..." className="w-full bg-transparent text-sm outline-none placeholder:text-white/40 light:placeholder:text-slate-500" aria-label="Search portfolio projects" />
@@ -340,7 +340,7 @@ function AboutSection() {
 function TestimonialsSection() {
   return (
     <section id="testimonials" className="px-5 py-20 sm:px-8 lg:px-12">
-      <SectionHeading eyebrow="Testimonials" title="Premium execution, clearer positioning, stronger client confidence." copy="Luxury-style cards and social proof ready to replace with live client feedback as the account grows." />
+      <SectionHeading eyebrow="Testimonials" title="Premium execution, clearer positioning, stronger client confidence." copy="Straightforward client feedback from campaigns focused on better content, clearer messaging, and practical business growth." />
       <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
         {testimonials.map((item, index) => (
           <motion.figure key={item.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: index * 0.08 }} className="glass rounded-[8px] p-6">
@@ -364,7 +364,7 @@ function TestimonialsSection() {
 function FaqSection({ activeFaq, setActiveFaq }: { activeFaq: number; setActiveFaq: (value: number) => void }) {
   return (
     <section className="px-5 py-20 sm:px-8 lg:px-12">
-      <SectionHeading eyebrow="FAQ" title="Clear answers before the first call." copy="A compact, accessible FAQ ready for more service and pricing questions as the site grows." />
+      <SectionHeading eyebrow="FAQ" title="Clear answers before the first call." copy="Simple answers about how Vision Organisation plans, creates, manages, and improves digital marketing work." />
       <div className="mx-auto max-w-3xl space-y-3">
         {faqs.map((item, index) => (
           <button key={item.q} onClick={() => setActiveFaq(activeFaq === index ? -1 : index)} className="glass w-full rounded-[8px] p-5 text-left">

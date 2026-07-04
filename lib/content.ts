@@ -91,61 +91,58 @@ export const services = [
 export const projects = [
   {
     client: "Case Study 01",
-    industry: "Beauty & Lifestyle Growth",
+    industry: "Beauty Studio Instagram Growth",
     metric: "10M+ Views",
-    challenge: "A premium service page needed stronger creative direction and a more trustworthy digital presence.",
-    solution: "Built an editorial reel system, luxury profile grid, and weekly offer-led stories.",
-    results: ["10M+ views", "4.8x profile visits", "62% more bookings"],
-    gallery: ["Brand film", "Reel series", "Before vs after grid"],
-    feedback: "Vision made our page feel premium and our enquiries became more serious."
+    challenge: "The studio had strong service quality, but the Instagram page did not show the finish, process, and client trust clearly enough.",
+    solution: "Planned service-focused reels, refined the visual grid, added proof-led stories, and built weekly content around transformations and client questions.",
+    results: ["10M+ views", "4.2x profile visits", "58% more booking enquiries"],
+    gallery: ["Transformation reels", "Service highlights", "Client proof stories"],
+    feedback: "The page started looking more premium, and the enquiries became more serious and easier to convert."
   },
   {
     client: "Case Study 02",
-    industry: "Food & Hospitality Growth",
-    metric: "25M+ Views",
-    challenge: "Strong visuals needed a content system that could convert attention into regular enquiries and orders.",
-    solution: "Created short-form food hooks, offer calendars, influencer seeding, and local ads.",
-    results: ["25M+ views", "3.1x engagement", "42% revenue lift"],
-    gallery: ["Menu launch", "UGC reels", "Local ad creatives"],
-    feedback: "The content finally looked like the experience we provide in the restaurant."
+    industry: "Cafe & Restaurant Visibility",
+    metric: "5M+ Views",
+    challenge: "The restaurant had good food visuals, but posts were inconsistent and did not create enough repeat attention from the local audience.",
+    solution: "Created a reel calendar around signature dishes, customer moments, festive offers, and location-based creatives for discovery.",
+    results: ["5M+ views", "2.9x engagement", "36% more order enquiries"],
+    gallery: ["Signature dish reels", "Offer creatives", "Local audience content"],
+    feedback: "The content finally matched the experience we give in the restaurant, and more people started asking about offers and visits."
   },
   {
     client: "Case Study 03",
-    industry: "High-Ticket Lead Generation",
-    metric: "100M+ Reach",
-    challenge: "A high-ticket offer needed better perception, better proof, and stronger lead qualification.",
-    solution: "Positioned the brand with cinematic walkthroughs, proof-led carousels, and paid funnels.",
-    results: ["100M+ reach", "7.4x lead quality", "31% lower CPL"],
-    gallery: ["Property films", "Lead funnel", "Sales creatives"],
-    feedback: "Vision Organisation helped us communicate trust at scale. The campaigns felt polished, clear, and measurable."
+    industry: "Education & Lead Generation",
+    metric: "1.5M+ Views",
+    challenge: "The brand needed to explain its offer more clearly and bring in better quality enquiries instead of only broad reach.",
+    solution: "Built trust-based reels, student result creatives, FAQ carousels, and lead-focused ad creatives with clear qualification points.",
+    results: ["1.5M+ views", "3.6x qualified leads", "28% lower cost per lead"],
+    gallery: ["Result creatives", "FAQ carousels", "Lead ad visuals"],
+    feedback: "The campaigns became clearer and more believable. We started getting leads who already understood what we offer."
   }
 ];
-
-
 export const testimonials = [
   {
-    name: "Riya Shah",
-    role: "Founder, Lifestyle Business",
+    name: "Beauty Studio Founder",
+    role: "Client, Gujarat",
     quote:
-      "The team understood premium positioning immediately. Our page looked sharper within days and the leads became far better.",
+      "The team understood our service quality and showed it properly online. The page looked cleaner, and the enquiries improved.",
     rating: 5
   },
   {
-    name: "Karan Mehta",
-    role: "Partner, Hospitality Business",
+    name: "Restaurant Partner",
+    role: "Client, Gujarat",
     quote:
-      "They turned regular food content into a repeatable growth engine. The ideas, edits, and reporting were all very professional.",
+      "They gave us consistent reels and offer creatives that people actually responded to. The content felt local and useful.",
     rating: 5
   },
   {
-    name: "Neel Patel",
-    role: "Director, Growth-Focused Business",
+    name: "Education Brand Owner",
+    role: "Client, Gujarat",
     quote:
-      "Vision Organisation helped us communicate trust at scale. The campaigns felt polished, clear, and measurable.",
+      "The ads and reels explained our work better. We received more relevant leads instead of random messages.",
     rating: 5
   }
 ];
-
 export const timeline = [
   {
     title: "Discover",
