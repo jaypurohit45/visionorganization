@@ -97,7 +97,7 @@ export const clients = [
     creatorName: "Parth Parmar (Amdavadiman)",
     scope: "Editing",
     category: "Creator & Viral Entertainment",
-    logo: "/clients/whoparthyo.jpg",
+    logo: "/clients/whoparthyo_real.jpg",
     url: "https://www.instagram.com/whoparthyo?igsi=MWdsdGlnM3hvYmhkZg==",
     instagramHandle: "@whoparthyo",
     tagline: "High-Retention Video Editing, Viral Reel Pacing & Motion Sound Design",

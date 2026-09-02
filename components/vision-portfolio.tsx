@@ -251,348 +251,47 @@ function StatsSection() {
 }
 
 function ClientsSection() {
-  const [selectedClientIndex, setSelectedClientIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
-  const activeClient = clients[selectedClientIndex];
-
-  // Continuous marquee list
-  const marqueeClients = [...clients, ...clients, ...clients, ...clients];
-
-  const handlePrev = () => {
-    setDirection(-1);
-    setSelectedClientIndex((prev) => (prev === 0 ? clients.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setDirection(1);
-    setSelectedClientIndex((prev) => (prev === clients.length - 1 ? 0 : prev + 1));
-  };
-
-  const handleSelect = (index: number) => {
-    setDirection(index > selectedClientIndex ? 1 : -1);
-    setSelectedClientIndex(index);
-  };
-
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 50 : -50,
-      opacity: 0,
-      scale: 0.98
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.35 },
-        scale: { duration: 0.35 }
-      }
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -50 : 50,
-      opacity: 0,
-      scale: 0.98,
-      transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.25 },
-        scale: { duration: 0.25 }
-      }
-    })
-  };
-
   return (
-    <section id="clients" className="relative overflow-hidden px-5 py-24 sm:px-8 lg:px-12">
-      {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/4 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-violet-500/10 blur-[100px]" />
-      </div>
+    <section id="clients" className="relative px-5 py-20 sm:px-8 lg:px-12 overflow-hidden">
+      <SectionHeading
+        eyebrow="Our Clients"
+        title="Clients"
+        copy="Trusted by growing brands and content creators for full social media management and high-impact video editing."
+      />
 
-      <div className="relative mx-auto max-w-7xl">
-        {/* Section Header with Integrated Slider Controls */}
-        <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <motion.div {...fadeUp} className="max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200 light:text-blue-700">
-              Featured Client Case Studies
-            </p>
-            <h2 className="font-display text-4xl font-bold leading-tight text-balance sm:text-6xl">
-              How We Power Industry Leaders & Creators.
-            </h2>
-            <p className="mt-4 text-base leading-8 text-white/65 light:text-slate-700 sm:text-lg">
-              Explore our real client engagements — from complete social media management architecture for tech enterprises and healthcare SaaS to viral editing systems for high-reach creators.
-            </p>
-          </motion.div>
-
-          {/* Slider Controls (Top-Right Counter & Buttons) */}
-          <motion.div {...fadeUp} className="flex items-center gap-4 self-start lg:self-end">
-            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-mono text-white/80 backdrop-blur-lg light:border-slate-200 light:bg-white light:text-slate-700">
-              <span className="font-bold text-cyan-300 light:text-blue-600">0{selectedClientIndex + 1}</span>
-              <span className="text-white/30 light:text-slate-400">/</span>
-              <span>0{clients.length}</span>
+      {/* 3 Featured Client Cards (Logo, Name & Scope) */}
+      <div className="mx-auto max-w-5xl grid gap-6 sm:grid-cols-3">
+        {clients.map((client, index) => (
+          <motion.div
+            key={client.id}
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: index * 0.1 }}
+            className="group glass relative flex flex-col items-center justify-between rounded-2xl p-7 text-center transition-all duration-300 hover:-translate-y-2 hover:border-cyan-300/40 hover:shadow-glow"
+          >
+            {/* Logo */}
+            <div className="relative mb-5 h-28 w-28 overflow-hidden rounded-2xl border border-white/20 bg-black/60 p-2 shadow-xl transition-transform duration-300 group-hover:scale-105 light:border-slate-200 light:bg-white">
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={112}
+                height={112}
+                className="h-full w-full rounded-xl object-cover"
+              />
             </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handlePrev}
-                className="grid h-12 w-12 place-items-center rounded-full border border-white/15 bg-white/10 text-white transition hover:scale-105 hover:border-cyan-400/50 hover:bg-white/20 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] light:border-slate-300 light:bg-white light:text-slate-900"
-                aria-label="Previous Case Study"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="grid h-12 w-12 place-items-center rounded-full border border-white/15 bg-white/10 text-white transition hover:scale-105 hover:border-cyan-400/50 hover:bg-white/20 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] light:border-slate-300 light:bg-white light:text-slate-900"
-                aria-label="Next Case Study"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
+            {/* Name */}
+            <h3 className="font-display text-2xl font-bold text-white light:text-slate-950">
+              {client.name}
+            </h3>
+
+            {/* Scope / Role Tag */}
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+              <span className={`inline-flex rounded-full border px-4 py-1.5 text-xs font-semibold ${client.badgeBorder}`}>
+                {client.scope}
+              </span>
             </div>
           </motion.div>
-        </div>
-
-        {/* Full-Width Interactive Client Navigation Rail */}
-        <div className="mb-8 grid gap-3 sm:grid-cols-3">
-          {clients.map((client, index) => {
-            const isSelected = selectedClientIndex === index;
-            return (
-              <button
-                key={client.id}
-                onClick={() => handleSelect(index)}
-                className={`group relative overflow-hidden rounded-2xl border p-4 text-left backdrop-blur-xl transition-all duration-300 ${
-                  isSelected
-                    ? "border-cyan-400/60 bg-gradient-to-br from-white/[0.12] to-white/[0.04] shadow-[0_0_30px_rgba(34,211,238,0.2)] light:border-blue-500/50 light:bg-white"
-                    : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06] light:border-slate-200 light:bg-white/60"
-                }`}
-              >
-                <div className="flex items-center gap-3.5">
-                  <div
-                    className={`relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border p-1 shadow-inner transition duration-300 ${
-                      isSelected
-                        ? "border-cyan-300/80 bg-black/60"
-                        : "border-white/15 bg-black/40 group-hover:scale-105"
-                    }`}
-                  >
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={48}
-                      height={48}
-                      className="h-full w-full rounded-lg object-cover"
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <span className="truncate font-display text-base font-bold text-white light:text-slate-950">
-                        {client.name}
-                      </span>
-                    </div>
-                    <div className="mt-1 flex items-center gap-2">
-                      <span
-                        className={`inline-flex rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${client.badgeBorder}`}
-                      >
-                        {client.scope}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Active Progress Line Indicator */}
-                {isSelected && (
-                  <motion.div
-                    layoutId="activeClientTabGlow"
-                    className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500"
-                  />
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Full-Width Interactive Case-Study Slider Card */}
-        <div className="relative min-h-[580px] overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-black/40 p-6 shadow-2xl backdrop-blur-2xl light:border-slate-200 light:bg-white/95 sm:p-10 lg:p-12">
-          {/* Subtle Ambient Background Gradient */}
-          <div
-            className={`pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-gradient-to-br ${activeClient.accent} blur-3xl opacity-70`}
-          />
-
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={activeClient.id}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              className="relative z-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center"
-            >
-              {/* Left Column: Scope, Narrative, Case Highlight & Deliverables */}
-              <div>
-                {/* Scope, Category & Partnership Badges */}
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <span
-                    className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wider ${activeClient.badgeBorder} shadow-sm backdrop-blur`}
-                  >
-                    <Sparkles className="h-3.5 w-3.5" />
-                    {activeClient.scope}
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/70 light:border-slate-200 light:text-slate-600">
-                    {activeClient.category}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-400 light:border-emerald-200 light:bg-emerald-50 light:text-emerald-700">
-                    <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-                    Verified Partnership
-                  </span>
-                </div>
-
-                {/* Client Title & Instagram Handle */}
-                <div className="mt-6">
-                  <h3 className="flex flex-wrap items-center gap-3 font-display text-3xl font-extrabold text-white light:text-slate-950 sm:text-5xl">
-                    {activeClient.name}
-                    {activeClient.instagramHandle && (
-                      <span className="text-xl font-medium text-pink-400 light:text-pink-600 sm:text-2xl">
-                        {activeClient.instagramHandle}
-                      </span>
-                    )}
-                  </h3>
-                  <p className="mt-3 text-lg font-semibold text-cyan-200 light:text-blue-700 sm:text-xl">
-                    {activeClient.tagline}
-                  </p>
-                </div>
-
-                {/* In-depth Narrative */}
-                <p className="mt-5 text-base leading-8 text-white/75 light:text-slate-700 sm:text-lg">
-                  {activeClient.description}
-                </p>
-
-                {/* Case Highlight Callout Quote */}
-                <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4.5 backdrop-blur-md light:border-slate-200 light:bg-slate-50">
-                  <p className="text-sm italic leading-relaxed text-cyan-100/90 light:text-slate-800">
-                    &ldquo;{activeClient.caseHighlight}&rdquo;
-                  </p>
-                </div>
-
-                {/* Key Deliverables Grid */}
-                <div className="mt-8 space-y-3">
-                  <p className="text-xs font-bold uppercase tracking-widest text-white/50 light:text-slate-500">
-                    Scope of Execution & Systems
-                  </p>
-                  <div className="grid gap-2.5 sm:grid-cols-2">
-                    {activeClient.highlights.map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/90 shadow-sm light:border-slate-200 light:bg-white light:text-slate-800"
-                      >
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-300 light:text-blue-600" />
-                        <span className="font-medium">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Interactive Action Buttons */}
-                <div className="mt-9 flex flex-wrap items-center gap-4">
-                  {activeClient.url && activeClient.url !== "" && (
-                    <a
-                      href={activeClient.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 px-7 py-3.5 text-sm font-bold text-white shadow-xl shadow-pink-500/20 transition duration-300 hover:scale-[1.03] hover:shadow-pink-500/40"
-                    >
-                      <Instagram className="h-4 w-4 transition group-hover:rotate-12" />
-                      {activeClient.instagramHandle
-                        ? `Follow ${activeClient.instagramHandle} on Instagram`
-                        : `View Client Profile`}
-                      <ExternalLink className="h-4 w-4 opacity-80" />
-                    </a>
-                  )}
-
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold backdrop-blur transition duration-200 hover:scale-[1.02] hover:bg-white/20 light:border-slate-300 light:bg-slate-100 light:text-slate-900"
-                  >
-                    <span>Request Similar Scope</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Column: Large Preview Media Banner & Performance Metrics */}
-              <div className="space-y-6">
-                {/* Large Preview Media Card */}
-                <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-b from-white/[0.1] to-black/60 p-8 text-center backdrop-blur-2xl transition duration-500 hover:border-cyan-400/40 hover:shadow-[0_0_40px_rgba(34,211,238,0.25)] light:border-slate-200 light:bg-white">
-                  <div className="relative mx-auto mb-6 h-44 w-44 overflow-hidden rounded-3xl border-2 border-white/25 bg-black/70 p-3 shadow-2xl transition duration-500 group-hover:scale-105">
-                    <Image
-                      src={activeClient.logo}
-                      alt={activeClient.name}
-                      width={176}
-                      height={176}
-                      className="h-full w-full rounded-2xl object-cover"
-                    />
-                  </div>
-
-                  <h4 className="font-display text-2xl font-bold text-white light:text-slate-950">
-                    {activeClient.name}
-                  </h4>
-                  {activeClient.creatorName && (
-                    <p className="text-sm text-white/60 light:text-slate-600">
-                      {activeClient.creatorName}
-                    </p>
-                  )}
-                  <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-bold text-cyan-200 light:border-blue-200 light:bg-blue-50 light:text-blue-700">
-                    {activeClient.scope} Partner
-                  </p>
-                </div>
-
-                {/* 3 Prominent Impact & Growth Metric Badges */}
-                <div className="grid grid-cols-3 gap-3">
-                  {activeClient.metrics.map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 text-center shadow-md backdrop-blur-lg transition hover:-translate-y-1 hover:border-cyan-300/30 light:border-slate-200 light:bg-white"
-                    >
-                      <p className="font-display text-2xl font-black text-cyan-200 light:text-blue-700 sm:text-3xl">
-                        {metric.value}
-                      </p>
-                      <p className="mt-1 text-xs font-medium leading-tight text-white/60 light:text-slate-600">
-                        {metric.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Continuous Brand Marquee Ticker at bottom for extra social proof */}
-        <div className="pause-hover mt-12 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] py-4 backdrop-blur-lg light:border-slate-200 light:bg-white/50">
-          <div className="animate-marquee flex items-center gap-8">
-            {marqueeClients.map((client, idx) => (
-              <div
-                key={`ticker-${client.id}-${idx}`}
-                onClick={() => handleSelect(idx % clients.length)}
-                className="flex shrink-0 cursor-pointer items-center gap-3 opacity-70 transition hover:opacity-100"
-              >
-                <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-white/20 bg-black/40">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={32}
-                    height={32}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <span className="font-display text-sm font-semibold text-white light:text-slate-900">
-                  {client.name}
-                </span>
-                <span className={`rounded-full border px-2 py-0.5 text-[9px] font-bold ${client.badgeBorder}`}>
-                  {client.scope}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
