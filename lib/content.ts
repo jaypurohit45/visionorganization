@@ -20,6 +20,7 @@ export const primaryEmail = "infovisionorganisation@gmail.com";
 
 export const navItems = [
   "Home",
+  "Clients",
   "Services",
   "Portfolio",
   "About",
@@ -33,6 +34,92 @@ export const stats = [
   { value: "40M+", label: "Views generated" },
   { value: "2M+", label: "Engagements" },
   { value: "99%", label: "Client satisfaction" }
+];
+
+export const clients = [
+  {
+    id: "om-techsoft",
+    name: "Om Techsoft",
+    scope: "Full Social Media",
+    category: "Technology & Software Development",
+    logo: "/clients/omtechsoft.jpg",
+    url: "https://www.instagram.com",
+    tagline: "End-to-End Social Media Architecture & Technical Brand Presence",
+    description:
+      "We handle the entire social media ecosystem for Om Techsoft — from visual brand positioning and complex tech explainers to weekly carousel calendars, reels, and developer community engagement.",
+    caseHighlight: "Transforming technical capabilities into sleek, high-engagement visual assets that drive qualified enterprise leads.",
+    metrics: [
+      { label: "Reach & Visibility", value: "3.4x" },
+      { label: "Assets Delivered", value: "120+" },
+      { label: "Inbound Enquiries", value: "+150%" }
+    ],
+    highlights: [
+      "End-to-End Content Calendar & Posting Systems",
+      "Tech Graphic Design & Educational Carousels",
+      "Product Spotlight & Service Launch Campaigns",
+      "Weekly Performance Analytics & Optimization"
+    ],
+    accent: "from-blue-600/30 via-cyan-500/15 to-transparent",
+    glowColor: "rgba(59, 130, 246, 0.4)",
+    badgeBorder: "border-cyan-400/40 text-cyan-300 bg-cyan-950/40",
+    themePill: "bg-blue-500/10 text-blue-400 border-blue-500/20"
+  },
+  {
+    id: "myclinic-software",
+    name: "MyclinicSoftware",
+    scope: "Full Social Media",
+    category: "Healthcare & Clinic Management SaaS",
+    logo: "/clients/myclinic.jpg",
+    url: "https://www.instagram.com",
+    tagline: "Medical SaaS Social Branding, Doctor Trust & Inbound Acquisition",
+    description:
+      "Vision Organisation drives the complete digital presence for MyclinicSoftware, architecting trust-focused campaigns, product walkthroughs, doctor testimonials, and medical workflow feature carousels.",
+    caseHighlight: "Positioning healthcare software as an indispensable daily tool for modern clinics and hospitals through credible visual storytelling.",
+    metrics: [
+      { label: "Doctor Outreach", value: "4.8x" },
+      { label: "SaaS Impressions", value: "2.8M+" },
+      { label: "Lower Cost/Lead", value: "-42%" }
+    ],
+    highlights: [
+      "Healthcare SaaS Product Walkthrough Creatives",
+      "High-Trust Doctor Testimonials & Case Graphics",
+      "Multi-Platform Organic Social Management",
+      "Feature Breakdown & Clinic ROI Infographics"
+    ],
+    accent: "from-teal-600/30 via-emerald-500/15 to-transparent",
+    glowColor: "rgba(20, 184, 166, 0.4)",
+    badgeBorder: "border-teal-400/40 text-teal-300 bg-teal-950/40",
+    themePill: "bg-teal-500/10 text-teal-400 border-teal-500/20"
+  },
+  {
+    id: "whoparthyo",
+    name: "Whoparthyo",
+    creatorName: "Parth Parmar (Amdavadiman)",
+    scope: "Editing",
+    category: "Creator & Viral Entertainment",
+    logo: "/clients/whoparthyo.jpg",
+    url: "https://www.instagram.com/whoparthyo?igsi=MWdsdGlnM3hvYmhkZg==",
+    instagramHandle: "@whoparthyo",
+    tagline: "High-Retention Video Editing, Viral Reel Pacing & Motion Sound Design",
+    description:
+      "Producing viral comedy reels and high-engagement content for Parth Parmar (@whoparthyo) with pattern-breaking hooks, kinetic subtitles, sound effects, and color grading tuned for maximum algorithm retention.",
+    caseHighlight: "Transforming raw footage into scroll-stopping comedy reels with razor-sharp comedic timing and cinematic sound design.",
+    metrics: [
+      { label: "Views Generated", value: "10M+" },
+      { label: "Avg Watch Retention", value: "88%" },
+      { label: "Engagement Boost", value: "3.2x" }
+    ],
+    highlights: [
+      "Kinetic Subtitles & Dynamic Typography",
+      "Pattern-Interrupt Editing & Comedic Pacing",
+      "Multi-Track Sound Design & Sound Effects",
+      "Color Grading & Platform-Specific Export Optimization"
+    ],
+    accent: "from-fuchsia-600/30 via-pink-500/15 to-transparent",
+    glowColor: "rgba(236, 72, 153, 0.4)",
+    badgeBorder: "border-pink-400/40 text-pink-300 bg-pink-950/40",
+    themePill: "bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20"
+  }
 ];
 
 export const services = [
